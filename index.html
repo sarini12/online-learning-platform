@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LearnFlow – Online Learning Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- hls.js for video streaming -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">LearnFlow</h1>
+      <nav class="nav">
+        <button id="btn-login" class="btn btn-outline small">Sign in</button>
+        <button id="btn-logout" class="btn btn-outline small hidden">Log out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <aside class="sidebar" id="lesson-list"></aside>
+
+    <section class="content">
+      <div class="card">
+        <h2 id="course-title">Course</h2>
+        <p id="course-desc" class="muted"></p>
+        <div class="progress-wrap">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="progress-meta" id="progress-meta"></div>
+      </div>
+
+      <div class="card">
+        <h3 id="lesson-title">Lesson</h3>
+        <div class="video-shell">
+          <video id="video" class="video" controls playsinline></video>
+          <div id="video-error" class="video-error hidden"></div>
+        </div>
+      </div>
+
+      <div class="card" id="quiz-card">
+        <div class="card-header">
+          <h3>Quick Quiz</h3>
+          <span id="best-badge" class="badge hidden"></span>
+        </div>
+        <div id="quiz-root"></div>
+        <div class="quiz-actions">
+          <button id="btn-submit-quiz" class="btn">Submit Quiz</button>
+          <div id="quiz-score" class="muted"></div>
+        </div>
+      </div>
+
+      <div class="actions-row">
+        <button id="btn-mark-complete" class="btn btn-outline">Mark lesson complete</button>
+        <span id="course-complete" class="badge success hidden">🎉 Course complete!</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Auth modal -->
+  <dialog id="auth-dialog" class="dialog">
+    <form method="dialog" class="dialog-card">
+      <h3>Sign in</h3>
+      <p class="muted">Enter your email to track progress on this device.</p>
+      <input id="email-input" type="email" required placeholder="you@example.com" class="input" />
+      <div class="dialog-actions">
+        <button id="auth-cancel" value="cancel" class="btn btn-outline">Cancel</button>
+        <button id="auth-ok" value="default" class="btn">Continue</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="site-footer muted">
+    <div class="container">© <span id="year"></span> LearnFlow · Frontend Demo</div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

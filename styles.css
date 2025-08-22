@@ -1,0 +1,47 @@
+:root{
+  --bg: #f6f9ff;
+  --card: #ffffff;
+  --muted: #667085;
+  --text: #0f172a;
+  --primary: #2563eb;
+  --green: #16a34a;
+  --border:#e5e7eb;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:sans-serif;color:var(--text);background:linear-gradient(#fff,var(--bg));}
+
+.container{max-width:1100px;margin:0 auto;padding:16px}
+.site-header{background:#fff;border-bottom:1px solid var(--border)}
+.header-inner{display:flex;justify-content:space-between;align-items:center}
+.brand{margin:8px 0;font-size:1.4rem}
+
+.main-grid{display:grid;grid-template-columns:280px 1fr;gap:16px;margin-top:16px}
+@media (max-width:900px){.main-grid{grid-template-columns:1fr}}
+
+.sidebar{display:grid;gap:10px}
+.lesson-btn{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;cursor:pointer}
+.lesson-btn:hover{background:#f8fafc}
+.lesson-title{font-weight:600}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
+.card-header{display:flex;justify-content:space-between}
+
+.video-shell{background:#000;border-radius:12px;overflow:hidden}
+.video{width:100%;aspect-ratio:16/9}
+.video-error{padding:8px;background:#fee2e2;color:#b91c1c}
+
+.progress-wrap{background:#eef2ff;height:10px;border-radius:999px;margin:10px 0}
+.progress-bar{height:100%;width:0;background:var(--primary)}
+
+.btn{background:var(--primary);color:#fff;padding:8px 14px;border:none;border-radius:8px;cursor:pointer}
+.btn:hover{opacity:.9}
+.btn-outline{background:#fff;color:#111827;border:1px solid var(--border)}
+
+.badge{font-size:.8rem;padding:4px 8px;border-radius:999px;background:#f1f5f9}
+.badge.success{background:#dcfce7;color:var(--green)}
+
+.input{width:100%;padding:8px;border:1px solid var(--border);border-radius:8px}
+
+.hidden{display:none}
+.muted{color:var(--muted)}
